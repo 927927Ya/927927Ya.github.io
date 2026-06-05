@@ -5,8 +5,8 @@
   <meta name="Volantis" content="6.0.3">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://927927ya.github.io/archives/"/>
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://927927ya.github.io/2026/06/05/视频反推分镜Agent部署指南/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +33,23 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>归档 - 小杨的博客</title>
-  <meta name="keywords" content="前端,AI,Dify,求职,应届生">
+  <title>手把手教你搭建 Dify 视频反推分镜 Agent（含飞书表格接入） - 小杨的博客</title>
+  <meta name="keywords" content="AI应用, Dify,FFmpeg,飞书,前端,AI,Dify,求职,应届生">
   <meta desc name="description" content="2026届应届生 前端&#x2F;AI应用开发 技术博客 - 小杨 - 小杨的博客">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="小杨的博客">
-<meta property="og:url" content="https://927927ya.github.io/archives/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手把手教你搭建 Dify 视频反推分镜 Agent（含飞书表格接入）">
+<meta property="og:url" content="https://927927ya.github.io/2026/06/05/%E8%A7%86%E9%A2%91%E5%8F%8D%E6%8E%A8%E5%88%86%E9%95%9CAgent%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/index.html">
 <meta property="og:site_name" content="小杨的博客">
-<meta property="og:description" content="2026届应届生 前端&#x2F;AI应用开发 技术博客">
+<meta property="og:description" content="手把手教你搭建 Dify 视频反推分镜 Agent 上传视频 → 自动拆分为多个分镜 → 生成 AI 描述 → 写入飞书多维表格（含关键帧截图）    1. 项目概述整体架构123456789用户上传视频 → Dify → HTTP请求 → ffmpeg-server (Docker)                                           ↓">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2026-06-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-04T16:00:00.000Z">
 <meta property="article:author" content="小杨">
-<meta property="article:tag" content="前端,AI,Dify,求职,应届生">
+<meta property="article:tag" content="Dify">
+<meta property="article:tag" content="FFmpeg">
+<meta property="article:tag" content="飞书">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2424,7 +2428,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
 </script>
 
   
-    <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"小杨的博客","url":"https://927927ya.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"小杨","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://927927ya.github.io/","sameAs":["https://github.com/volantis-x"],"description":"2026届应届生 前端/AI应用开发 技术博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://927927ya.github.io/","name":"小杨的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://927927ya.github.io/archives/","name":"Archive"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"小杨的博客","url":"https://927927ya.github.io/","keywords":"前端,AI,Dify,求职,应届生","description":"2026届应届生 前端/AI应用开发 技术博客","author":{"@type":"Person","name":"小杨","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://927927ya.github.io/","description":"2026届应届生 前端/AI应用开发 技术博客"},"publisher":{"@type":"Organization","name":"小杨的博客","url":"https://927927ya.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://927927ya.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"2026届应届生 前端/AI应用开发 技术博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"小杨","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://927927ya.github.io/"},"publisher":{"@type":"Organization","name":"小杨的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+    <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"小杨的博客","url":"https://927927ya.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"小杨","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://927927ya.github.io/","sameAs":["https://github.com/volantis-x"],"description":"2026届应届生 前端/AI应用开发 技术博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://927927ya.github.io/","name":"小杨的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://927927ya.github.io/categories/AI应用/","name":"AI应用"}},{"@type":"ListItem","position":3,"item":{"@id":"https://927927ya.github.io/2026/06/05/视频反推分镜Agent部署指南/","name":"手把手教你搭建 Dify 视频反推分镜 Agent（含飞书表格接入）"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"小杨的博客","url":"https://927927ya.github.io/","keywords":"前端,AI,Dify,求职,应届生","description":"2026届应届生 前端/AI应用开发 技术博客","author":{"@type":"Person","name":"小杨","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://927927ya.github.io/","description":"2026届应届生 前端/AI应用开发 技术博客"},"publisher":{"@type":"Organization","name":"小杨的博客","url":"https://927927ya.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://927927ya.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"手把手教你搭建 Dify 视频反推分镜 Agent（含飞书表格接入）","description":"2026届应届生 前端/AI应用开发 技术博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://927927ya.github.io/2026/06/05/%E8%A7%86%E9%A2%91%E5%8F%8D%E6%8E%A8%E5%88%86%E9%95%9CAgent%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/"},"author":{"@type":"Person","name":"小杨","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://927927ya.github.io/"},"publisher":{"@type":"Organization","name":"小杨的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://927927ya.github.io/2026/06/05/%E8%A7%86%E9%A2%91%E5%8F%8D%E6%8E%A8%E5%88%86%E9%95%9CAgent%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/","wordCount":0,"datePublished":"2026-06-04T16:00:00.000Z","dateModified":"2026-06-04T16:00:00.000Z","articleSection":"AI应用","keywords":"Dify,FFmpeg,飞书","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
   
   <!-- import head_end begin -->
   <!-- import head_end end -->
@@ -2438,7 +2442,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2707,7 +2711,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
   
     
       <!-- see: /layout/_partial/scripts/_ctrl.ejs -->
-      <div id="half" class='cover-wrapper  dock' style="display: ;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg"></div>
 
@@ -2770,63 +2774,519 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-	  <article id="arc" class="post article white-box reveal shadow floatable blur">
-			
-			
-				
-				
-					
-						
-						<h2>2026</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2026/06/05/%E8%A7%86%E9%A2%91%E5%8F%8D%E6%8E%A8%E5%88%86%E9%95%9CAgent%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
-									<time>06-05</time>
-									
-										手把手教你搭建 Dify 视频反推分镜 Agent（含飞书表格接入）
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2026/06/04/%E8%A7%86%E9%A2%91%E5%8F%8D%E6%8E%A8%E5%88%86%E9%95%9CAgent-%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0%E6%95%99%E7%A8%8B/">
-									<time>06-04</time>
-									
-										视频反推分镜Agent：从零部署教程
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2026/06/03/%E8%A7%86%E9%A2%91%E5%8F%8D%E6%8E%A8%E5%88%86%E9%95%9CAgent/">
-									<time>06-03</time>
-									
-										从零搭建 Dify 视频反推分镜 Agent：一个 Fallback 驱动的工程实践
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-	  </article>
-	
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://927927ya.github.io/2026/06/05/视频反推分镜Agent部署指南/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="小杨的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="name" content="手把手教你搭建 Dify 视频反推分镜 Agent（含飞书表格接入）">
+    <meta itemprop="description" content="2026届应届生 前端&#x2F;AI应用开发 技术博客">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        手把手教你搭建 Dify 视频反推分镜 Agent（含飞书表格接入）
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/about/" rel="nofollow" alt="author">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">小杨</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  
+  
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/AI%E5%BA%94%E7%94%A8/">AI应用</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/AI%E5%BA%94%E7%94%A8/" itemprop="url"><span itemprop="name">AI应用</span></a>
+      </span>
+    
+  </div>
+  
+
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2026-06-05T00:00:00+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2026年6月5日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h1 id="手把手教你搭建-Dify-视频反推分镜-Agent"><a href="#手把手教你搭建-Dify-视频反推分镜-Agent" class="headerlink" title="手把手教你搭建 Dify 视频反推分镜 Agent"></a>手把手教你搭建 Dify 视频反推分镜 Agent</h1><blockquote>
+<p>上传视频 → 自动拆分为多个分镜 → 生成 AI 描述 → 写入飞书多维表格（含关键帧截图）</p>
+</blockquote>
+<hr>
+<hr>
+<h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><h3 id="整体架构"><a href="#整体架构" class="headerlink" title="整体架构"></a>整体架构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">用户上传视频 → Dify → HTTP请求 → ffmpeg-server (Docker)</span><br><span class="line">                                           ↓</span><br><span class="line">                                    FFmpeg 场景检测 + 关键帧提取</span><br><span class="line">                                           ↓</span><br><span class="line">                                    千问LLM 逐帧描述</span><br><span class="line">                                           ↓</span><br><span class="line">                                   飞书多维表格写入 (文本+图片)</span><br><span class="line">                                           ↓</span><br><span class="line">                                  Dify 输出 Markdown 分镜脚本</span><br></pre></td></tr></table></figure>
+
+<h3 id="为什么不在-Dify-里直接处理？"><a href="#为什么不在-Dify-里直接处理？" class="headerlink" title="为什么不在 Dify 里直接处理？"></a>为什么不在 Dify 里直接处理？</h3><table>
+<thead>
+<tr>
+<th>限制</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Dify 沙箱禁止 subprocess</td>
+<td>无法运行 FFmpeg</td>
+</tr>
+<tr>
+<td>沙箱无法写临时文件</td>
+<td>tempfile 权限问题</td>
+</tr>
+<tr>
+<td>变量有 200KB 限制</td>
+<td>base64 图片会被截断</td>
+</tr>
+</tbody></table>
+<p><strong>解决方案：</strong> 把 FFmpeg + LLM 调用 + 飞书写入全部封装进独立 Docker 容器，Dify 只做一次 HTTP 调用。</p>
+<hr>
+<h2 id="2-前置条件"><a href="#2-前置条件" class="headerlink" title="2. 前置条件"></a>2. 前置条件</h2><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>版本&#x2F;要求</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Docker Desktop</td>
+<td>任意版本</td>
+</tr>
+<tr>
+<td>Dify</td>
+<td>1.13.3 及以上（自部署 Docker）</td>
+</tr>
+<tr>
+<td>通义千问模型</td>
+<td>qwen3-omni-flash（多模态）</td>
+</tr>
+<tr>
+<td>飞书开放平台</td>
+<td>企业自建应用</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="3-飞书开放平台配置"><a href="#3-飞书开放平台配置" class="headerlink" title="3. 飞书开放平台配置"></a>3. 飞书开放平台配置</h2><h3 id="3-1-创建应用"><a href="#3-1-创建应用" class="headerlink" title="3.1 创建应用"></a>3.1 创建应用</h3><ol>
+<li>打开 <a target="_blank" rel="noopener" href="https://open.feishu.cn/app">飞书开放平台</a></li>
+<li>创建 <strong>企业自建应用</strong></li>
+<li>进入 <strong>权限管理</strong>，搜索并添加：<ul>
+<li><code>bitable:app</code> —— 多维表格读写</li>
+<li><code>drive:file</code> —— 云空间文件上传（关键帧图片需要）</li>
+</ul>
+</li>
+<li>进入 <strong>凭证与基础信息</strong>，记下 <code>App ID</code> 和 <code>App Secret</code></li>
+</ol>
+<h3 id="3-2-创建多维表格"><a href="#3-2-创建多维表格" class="headerlink" title="3.2 创建多维表格"></a>3.2 创建多维表格</h3><ol>
+<li>飞书桌面端&#x2F;网页端 → <strong>工作台</strong> → <strong>多维表格</strong> → 新建</li>
+<li>按以下表头建列：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>分镜编号</th>
+<th>时间范围</th>
+<th>画面主体</th>
+<th>动作</th>
+<th>环境</th>
+<th>运镜</th>
+<th>AI描述</th>
+<th>关键帧截图</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>文本</td>
+<td>文本</td>
+<td>文本</td>
+<td>文本</td>
+<td>文本</td>
+<td>文本</td>
+<td>文本</td>
+<td><strong>附件</strong></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>注意：</strong> 关键帧截图列类型必须是”附件”，否则图片无法显示。</p>
+</blockquote>
+<ol start="3">
+<li>从浏览器地址栏获取两个关键 ID：<ul>
+<li><code>app_token</code>（也叫 Base ID）：<code>base/{app_token}?table=...</code></li>
+<li><code>table_id</code>：<code>?table={table_id}&amp;view=...</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="3-3-添加应用为协作者"><a href="#3-3-添加应用为协作者" class="headerlink" title="3.3 添加应用为协作者"></a>3.3 添加应用为协作者</h3><p>打开多维表格 → 右上角 <strong>「…」</strong> → <strong>「…更多」</strong> → <strong>「添加文档应用」</strong> → 搜索你的应用名 → 添加 → 权限选 <strong>可管理</strong></p>
+<h3 id="3-4-发布版本"><a href="#3-4-发布版本" class="headerlink" title="3.4 发布版本"></a>3.4 发布版本</h3><p>开放平台 → <strong>版本管理与发布</strong> → 创建版本 <code>1.0.0</code> → <strong>发布</strong></p>
+<blockquote>
+<p>只有发布后，权限才会生效。</p>
+</blockquote>
+<hr>
+<h2 id="4-ffmpeg-server-部署"><a href="#4-ffmpeg-server-部署" class="headerlink" title="4. ffmpeg-server 部署"></a>4. ffmpeg-server 部署</h2><h3 id="4-1-Dockerfile"><a href="#4-1-Dockerfile" class="headerlink" title="4.1 Dockerfile"></a>4.1 Dockerfile</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> langgenius/dify-api:<span class="number">1.13</span>.<span class="number">3</span></span><br><span class="line"><span class="keyword">USER</span> root</span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> sed -i <span class="string">&quot;s/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g&quot;</span> /etc/apt/sources.list.d/debian.sources 2&gt;/dev/null; \</span></span><br><span class="line"><span class="language-bash">    apt-get update &amp;&amp; apt-get install -y ffmpeg &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    <span class="built_in">rm</span> -rf /var/lib/apt/lists/*</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask requests</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> server.py /app/server.py</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /app</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> []</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;python&quot;</span>, <span class="string">&quot;server.py&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-docker-compose-配置"><a href="#4-2-docker-compose-配置" class="headerlink" title="4.2 docker-compose 配置"></a>4.2 docker-compose 配置</h3><p>在 <code>docker-compose.yaml</code> 中添加：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ffmpeg-server:</span></span><br><span class="line">    <span class="attr">build:</span></span><br><span class="line">      <span class="attr">context:</span> <span class="string">./ffmpeg-server</span></span><br><span class="line">      <span class="attr">dockerfile:</span> <span class="string">Dockerfile</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">LLM_API_KEY:</span> <span class="string">sk-你的千问API密钥</span></span><br><span class="line">      <span class="attr">LLM_MODEL:</span> <span class="string">qwen3-omni-flash-2025-12-01</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">ssrf_proxy_network</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">default</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-关键可调参数"><a href="#4-3-关键可调参数" class="headerlink" title="4.3 关键可调参数"></a>4.3 关键可调参数</h3><p>在 <code>server.py</code> 顶部：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SCENE_THRESHOLD = <span class="number">0.25</span>    <span class="comment"># 场景检测灵敏度（0-1，越小越灵敏）</span></span><br><span class="line">MAX_SHOTS = <span class="number">50</span>            <span class="comment"># 最大分镜数</span></span><br><span class="line">KEYFRAME_QUALITY = <span class="number">10</span>     <span class="comment"># 关键帧图片质量（2-31，越低画质越好）</span></span><br><span class="line">KEYFRAME_WIDTH = <span class="number">512</span>      <span class="comment"># 关键帧宽度</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-构建与启动"><a href="#4-4-构建与启动" class="headerlink" title="4.4 构建与启动"></a>4.4 构建与启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> dify-main/docker</span><br><span class="line">docker compose up -d --build ffmpeg-server</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-server-py-核心逻辑解析"><a href="#5-server-py-核心逻辑解析" class="headerlink" title="5. server.py 核心逻辑解析"></a>5. server.py 核心逻辑解析</h2><h3 id="5-1-完整处理流程"><a href="#5-1-完整处理流程" class="headerlink" title="5.1 完整处理流程"></a>5.1 完整处理流程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1. Dify 通过 HTTP POST 发送视频 URL + 飞书配置</span><br><span class="line">2. ffmpeg-server 下载视频到临时目录</span><br><span class="line">3. FFprobe 获取视频总时长</span><br><span class="line">4. FFmpeg 场景检测 (select=gt(scene,0.25))</span><br><span class="line">   - 如未检测到场景切换：按 2s 固定间隔拆分</span><br><span class="line">   - 如分镜数超上限：截取前 50 个</span><br><span class="line">5. 提取每个分镜的关键帧（512px 缩放, q:v=10）</span><br><span class="line">6. 调用千问多模态模型逐帧分析，输出结构化 JSON</span><br><span class="line">7. 生成可读的 Markdown 分镜脚本</span><br><span class="line">8. 如有飞书配置：</span><br><span class="line">   a. 获取 tenant_access_token</span><br><span class="line">   b. 批量创建飞书记录（文本字段）</span><br><span class="line">   c. 逐帧上传图片到飞书 Drive</span><br><span class="line">   d. 将 file_token 更新到记录的附件字段</span><br><span class="line">9. 返回完整 JSON 给 Dify</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-飞书图片上传实现（关键）"><a href="#5-2-飞书图片上传实现（关键）" class="headerlink" title="5.2 飞书图片上传实现（关键）"></a>5.2 飞书图片上传实现（关键）</h3><p>这是整个项目最绕的部分。飞书多维表格的附件字段，不能直接上传文件。正确路径是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. POST /drive/v1/files/upload_all  (上传图片到飞书云空间)</span><br><span class="line">   参数: parent_type=&quot;bitable&quot;, parent_node=app_token</span><br><span class="line">   返回: file_token</span><br><span class="line"></span><br><span class="line">2. PUT /bitable/v1/apps/&#123;token&#125;/tables/&#123;tid&#125;/records/&#123;rid&#125;</span><br><span class="line">   将 file_token 写入 &quot;关键帧截图&quot; 字段</span><br></pre></td></tr></table></figure>
+
+<p><strong>踩坑记录：</strong></p>
+<ul>
+<li>参数名用 <code>size</code> 而不是 <code>file_size</code>（API 文档写后者但前者才有效）</li>
+<li>multipart body 需要手动拼接 CRLF 分隔，<code>requests</code> 库的 <code>files</code> 参数发送会被拒</li>
+<li>parent_type 传 <code>&quot;bitable&quot;</code>（非标准值但有效）</li>
+</ul>
+<h3 id="5-3-LLM-调用"><a href="#5-3-LLM-调用" class="headerlink" title="5.3 LLM 调用"></a>5.3 LLM 调用</h3><p>模型使用通义千问多模态模型 <code>qwen3-omni-flash</code>，输入关键帧 base64 图片 + 时间信息，输出结构化 JSON。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;活力少年奔跑亮相&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;subject&quot;</span><span class="punctuation">:</span> <span class="string">&quot;穿着黄上衣蓝背带裤的卡通少年&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;手持AD钙奶瓶，面带笑容向前奔跑&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;environment&quot;</span><span class="punctuation">:</span> <span class="string">&quot;阳光明媚的童话风格小镇&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;camera_movement&quot;</span><span class="punctuation">:</span> <span class="string">&quot;跟随少年奔跑的低角度跟拍镜头&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;style&quot;</span><span class="punctuation">:</span> <span class="string">&quot;3D卡通渲染，明亮饱和色彩&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;阳光洒落的童话小镇中...&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="6-Dify-工作流配置"><a href="#6-Dify-工作流配置" class="headerlink" title="6. Dify 工作流配置"></a>6. Dify 工作流配置</h2><h3 id="6-1-导入-DSL"><a href="#6-1-导入-DSL" class="headerlink" title="6.1 导入 DSL"></a>6.1 导入 DSL</h3><p>Dify 工作室 → 导入 DSL 文件 → 选择 <code>视频反推分镜Agent.yml</code></p>
+<h3 id="6-2-工作流节点"><a href="#6-2-工作流节点" class="headerlink" title="6.2 工作流节点"></a>6.2 工作流节点</h3><p>整个工作流只有 <strong>3 个节点</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用户输入 → 视频分镜分析(HTTP) → 格式化输出(Code) → 结束</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-3-HTTP-节点（视频分镜分析）"><a href="#6-3-HTTP-节点（视频分镜分析）" class="headerlink" title="6.3 HTTP 节点（视频分镜分析）"></a>6.3 HTTP 节点（视频分镜分析）</h3><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>方法</td>
+<td>POST</td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>http://ffmpeg-server:5002/process</code></td>
+</tr>
+<tr>
+<td>Body</td>
+<td>见下方</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td><code>application/json</code></td>
+</tr>
+<tr>
+<td>超时</td>
+<td>600s</td>
+</tr>
+</tbody></table>
+<p>Body 内容（JSON）：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;file_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;&#123;#1780036684573.video.url#&#125;&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;feishu&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;app_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cli_xxxxxxxxxxxxx&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;app_secret&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xxxxxxxxxxxxxxxxxx&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;app_token&quot;</span><span class="punctuation">:</span> <span class="string">&quot;JNfMb1RUhaKTgZsEIFsctmvhnEH&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;table_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tblcbfPrwW8a6dNI&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;img_field_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;fldmvu6vYS&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>各参数获取方式：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>在哪找</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>app_id</code></td>
+<td>应用 ID</td>
+<td>开放平台 → 凭证与基础信息</td>
+</tr>
+<tr>
+<td><code>app_secret</code></td>
+<td>应用密钥</td>
+<td>同上</td>
+</tr>
+<tr>
+<td><code>app_token</code></td>
+<td>多维表格 Base ID</td>
+<td>表格 URL: <code>base/{app_token}</code></td>
+</tr>
+<tr>
+<td><code>table_id</code></td>
+<td>数据表 ID</td>
+<td>表格 URL: <code>table={table_id}</code></td>
+</tr>
+<tr>
+<td><code>img_field_id</code></td>
+<td>附件字段 ID</td>
+<td>调用 API 或通过开放平台获取</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>获取 img_field_id：</strong> 调用 <code>GET /open-apis/bitable/v1/apps/{app_token}/tables/{table_id}/fields</code>，找到 <code>field_name</code> 为”关键帧截图”的 <code>field_id</code>。</p>
+</blockquote>
+<h3 id="6-4-Code-节点（格式化输出）"><a href="#6-4-Code-节点（格式化输出）" class="headerlink" title="6.4 Code 节点（格式化输出）"></a>6.4 Code 节点（格式化输出）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">http_body: <span class="built_in">str</span></span>) -&gt; <span class="built_in">dict</span>:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(http_body, <span class="built_in">str</span>):</span><br><span class="line">        data = json.loads(http_body)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        data = http_body</span><br><span class="line"></span><br><span class="line">    formatted = data.get(<span class="string">&quot;formatted&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> formatted:</span><br><span class="line">        formatted = json.dumps(data, ensure_ascii=<span class="literal">False</span>, indent=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    feishu = data.get(<span class="string">&quot;feishu&quot;</span>, &#123;&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="string">&quot;markdown&quot;</span>: formatted,</span><br><span class="line">        <span class="string">&quot;total_shots&quot;</span>: data.get(<span class="string">&quot;total_shots&quot;</span>, <span class="number">0</span>),</span><br><span class="line">        <span class="string">&quot;warning&quot;</span>: data.get(<span class="string">&quot;warning&quot;</span>, <span class="string">&quot;&quot;</span>),</span><br><span class="line">        <span class="string">&quot;feishu_result&quot;</span>: json.dumps(feishu, ensure_ascii=<span class="literal">False</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="7-输出示例"><a href="#7-输出示例" class="headerlink" title="7. 输出示例"></a>7. 输出示例</h2><h3 id="Dify-中的输出"><a href="#Dify-中的输出" class="headerlink" title="Dify 中的输出"></a>Dify 中的输出</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 视频分镜脚本</span></span><br><span class="line"></span><br><span class="line">共 8 个分镜</span><br><span class="line"></span><br><span class="line"><span class="section">## 分镜01:活力少年奔跑亮相(0s-3.5s)</span></span><br><span class="line"></span><br><span class="line">画面主体:穿着黄上衣蓝背带裤的卡通少年</span><br><span class="line">动作:手持AD钙奶瓶，面带笑容向前奔跑</span><br><span class="line">环境:阳光明媚的童话风格小镇</span><br><span class="line">运镜:跟随少年奔跑的低角度跟拍镜头</span><br><span class="line">风格控制:3D卡通渲染，明亮饱和色彩</span><br><span class="line"></span><br><span class="line"><span class="section">阳光洒落的童话小镇中，一名活力四射的卡通少年手持AD钙奶瓶...</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="飞书表格效果"><a href="#飞书表格效果" class="headerlink" title="飞书表格效果"></a>飞书表格效果</h3><table>
+<thead>
+<tr>
+<th>分镜编号</th>
+<th>时间范围</th>
+<th>画面主体</th>
+<th>动作</th>
+<th>环境</th>
+<th>运镜</th>
+<th>AI描述</th>
+<th>关键帧截图</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>分镜01</td>
+<td>0s-3.5s</td>
+<td>穿着黄上衣…</td>
+<td>手持AD钙奶…</td>
+<td>阳光明媚…</td>
+<td>跟拍</td>
+<td>阳光洒落…</td>
+<td>🖼️ 图片</td>
+</tr>
+<tr>
+<td>分镜02</td>
+<td>3.5s-7.2s</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>🖼️ 图片</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="8-常见问题排错"><a href="#8-常见问题排错" class="headerlink" title="8. 常见问题排错"></a>8. 常见问题排错</h2><h3 id="8-1-HTTP-节点超时"><a href="#8-1-HTTP-节点超时" class="headerlink" title="8.1 HTTP 节点超时"></a>8.1 HTTP 节点超时</h3><ul>
+<li><strong>原因：</strong> 视频太长或分镜数太多，处理时间超过默认超时</li>
+<li><strong>解决：</strong> 将 HTTP 节点的超时设为 600s+</li>
+</ul>
+<h3 id="8-2-LLM-返回-429-限流"><a href="#8-2-LLM-返回-429-限流" class="headerlink" title="8.2 LLM 返回 429 限流"></a>8.2 LLM 返回 429 限流</h3><ul>
+<li><strong>原因：</strong> 连续请求过于频繁</li>
+<li><strong>解决：</strong> 代码中已内置 0.5s 延迟，仍出现可增加到 1s</li>
+</ul>
+<h3 id="8-3-图片无法上传到飞书"><a href="#8-3-图片无法上传到飞书" class="headerlink" title="8.3 图片无法上传到飞书"></a>8.3 图片无法上传到飞书</h3><ul>
+<li><strong>原因 1：</strong> 应用缺少 <code>drive:file</code> 权限</li>
+<li><strong>原因 2：</strong> 关键帧截图列类型不是”附件”</li>
+<li><strong>原因 3：</strong> 版本未发布导致权限不生效</li>
+</ul>
+<p><strong>排查：</strong> 检查 ffmpeg-server 日志 <code>docker logs docker-ffmpeg-server-1 --tail 30</code></p>
+<h3 id="8-4-“params-error”-错误"><a href="#8-4-“params-error”-错误" class="headerlink" title="8.4 “params error” 错误"></a>8.4 “params error” 错误</h3><ul>
+<li><strong>原因：</strong> Drive 上传接口 multipart 参数名不对</li>
+<li><strong>解决：</strong> 参数名用 <code>size</code> 不要用 <code>file_size</code>，手动拼接 multipart body</li>
+</ul>
+<h3 id="8-5-“FieldNameNotFound”-错误"><a href="#8-5-“FieldNameNotFound”-错误" class="headerlink" title="8.5 “FieldNameNotFound” 错误"></a>8.5 “FieldNameNotFound” 错误</h3><ul>
+<li><strong>原因：</strong> 飞书表格列名不匹配</li>
+<li><strong>解决：</strong> 确保 8 个列名完全一致：分镜编号、时间范围、画面主体、动作、环境、运镜、AI描述、关键帧截图</li>
+</ul>
+<h3 id="8-6-Dify-变量截断"><a href="#8-6-Dify-变量截断" class="headerlink" title="8.6 Dify 变量截断"></a>8.6 Dify 变量截断</h3><ul>
+<li><strong>原因：</strong> Dify 变量有 200KB 上限</li>
+<li><strong>解决：</strong> 大尺寸数据（base64 图片）在 ffmpeg-server 内部处理，不经 Dify 变量传递</li>
+</ul>
+<hr>
+<h2 id="9-维护命令"><a href="#9-维护命令" class="headerlink" title="9. 维护命令"></a>9. 维护命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 构建并启动</span></span><br><span class="line">docker compose up -d --build ffmpeg-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看日志（调试时用）</span></span><br><span class="line">docker logs docker-ffmpeg-server-1 --<span class="built_in">tail</span> 50</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">docker compose restart ffmpeg-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启 SSRF 代理</span></span><br><span class="line">docker compose restart ssrf_proxy</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p><strong>项目源码位置：</strong> <code>C:\Users\Administrator\Desktop\视频反推agent提示词\</code></p>
+<p><strong>DSL 导入文件：</strong> <code>视频反推分镜Agent.yml</code></p>
+<p><strong>部署日期：</strong> 2026-06-05</p>
+</blockquote>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2026-06-05T00:00:00+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2026年6月5日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Dify/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Dify</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/FFmpeg/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>FFmpeg</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%A3%9E%E4%B9%A6/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>飞书</p></a></div>
+  <span hidden itemprop="keywords">Dify FFmpeg 飞书</span>
+  
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://927927ya.github.io/2026/06/05/%E8%A7%86%E9%A2%91%E5%8F%8D%E6%8E%A8%E5%88%86%E9%95%9CAgent%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/&title=手把手教你搭建 Dify 视频反推分镜 Agent（含飞书表格接入） - 小杨的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://927927ya.github.io/2026/06/05/%E8%A7%86%E9%A2%91%E5%8F%8D%E6%8E%A8%E5%88%86%E9%95%9CAgent%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/&title=手把手教你搭建 Dify 视频反推分镜 Agent（含飞书表格接入） - 小杨的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://927927ya.github.io/2026/06/05/%E8%A7%86%E9%A2%91%E5%8F%8D%E6%8E%A8%E5%88%86%E9%95%9CAgent%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/&title=手把手教你搭建 Dify 视频反推分镜 Agent（含飞书表格接入） - 小杨的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2026/06/04/%E8%A7%86%E9%A2%91%E5%8F%8D%E6%8E%A8%E5%88%86%E9%95%9CAgent-%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0%E6%95%99%E7%A8%8B/'>
+          <p class='title'>视频反推分镜Agent：从零部署教程<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>视频反推分镜Agent：从零部署教程
+在 Dify 上搭建一个视频反推分镜工作流。上传视频 → 自动拆分成多个分镜 → AI 分析每个分镜的主体、动作、环境、运镜 → 输出结构化的分镜脚本（含关...</p>
+        </a>
+      
+    </div>
+  
+  <!-- 文章推荐 -->
+  
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2026/06/05/%E8%A7%86%E9%A2%91%E5%8F%8D%E6%8E%A8%E5%88%86%E9%95%9CAgent%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2835,109 +3295,48 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
     
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg' alt='avatar' />
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>小杨</h2>
-        
-        
-          <p>2026届 · 前端&#x2F;AI开发</p>
-
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="https://github.com/927927Ya"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/AI%E5%BA%94%E7%94%A8/" href="/categories/AI%E5%BA%94%E7%94%A8/"
-            active-action="action-categoriesAIE5BA94E794A8"
-            ><div class='name'>AI应用</div><div class='badge'>(3)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/AI/" style="font-size: 19px; color: #777">AI</a> <a href="/tags/Dify/" style="font-size: 24px; color: #555">Dify</a> <a href="/tags/FFmpeg/" style="font-size: 24px; color: #555">FFmpeg</a> <a href="/tags/%E5%8D%83%E9%97%AE/" style="font-size: 19px; color: #777">千问</a> <a href="/tags/%E8%A7%86%E9%A2%91%E5%A4%84%E7%90%86/" style="font-size: 19px; color: #777">视频处理</a> <a href="/tags/%E9%A3%9E%E4%B9%A6/" style="font-size: 14px; color: #999">飞书</a>
-    </div>
-  </section>
-
-
-    
-  
-
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0"><span class="toc-text">1. 项目概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84"><span class="toc-text">整体架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%9C%A8-Dify-%E9%87%8C%E7%9B%B4%E6%8E%A5%E5%A4%84%E7%90%86%EF%BC%9F"><span class="toc-text">为什么不在 Dify 里直接处理？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%89%8D%E7%BD%AE%E6%9D%A1%E4%BB%B6"><span class="toc-text">2. 前置条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%A3%9E%E4%B9%A6%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0%E9%85%8D%E7%BD%AE"><span class="toc-text">3. 飞书开放平台配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8"><span class="toc-text">3.1 创建应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%88%9B%E5%BB%BA%E5%A4%9A%E7%BB%B4%E8%A1%A8%E6%A0%BC"><span class="toc-text">3.2 创建多维表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E4%B8%BA%E5%8D%8F%E4%BD%9C%E8%80%85"><span class="toc-text">3.3 添加应用为协作者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%8F%91%E5%B8%83%E7%89%88%E6%9C%AC"><span class="toc-text">3.4 发布版本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-ffmpeg-server-%E9%83%A8%E7%BD%B2"><span class="toc-text">4. ffmpeg-server 部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Dockerfile"><span class="toc-text">4.1 Dockerfile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-docker-compose-%E9%85%8D%E7%BD%AE"><span class="toc-text">4.2 docker-compose 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%85%B3%E9%94%AE%E5%8F%AF%E8%B0%83%E5%8F%82%E6%95%B0"><span class="toc-text">4.3 关键可调参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E6%9E%84%E5%BB%BA%E4%B8%8E%E5%90%AF%E5%8A%A8"><span class="toc-text">4.4 构建与启动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-server-py-%E6%A0%B8%E5%BF%83%E9%80%BB%E8%BE%91%E8%A7%A3%E6%9E%90"><span class="toc-text">5. server.py 核心逻辑解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E5%AE%8C%E6%95%B4%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B"><span class="toc-text">5.1 完整处理流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E9%A3%9E%E4%B9%A6%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E5%AE%9E%E7%8E%B0%EF%BC%88%E5%85%B3%E9%94%AE%EF%BC%89"><span class="toc-text">5.2 飞书图片上传实现（关键）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-LLM-%E8%B0%83%E7%94%A8"><span class="toc-text">5.3 LLM 调用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Dify-%E5%B7%A5%E4%BD%9C%E6%B5%81%E9%85%8D%E7%BD%AE"><span class="toc-text">6. Dify 工作流配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E5%AF%BC%E5%85%A5-DSL"><span class="toc-text">6.1 导入 DSL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%8A%82%E7%82%B9"><span class="toc-text">6.2 工作流节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-HTTP-%E8%8A%82%E7%82%B9%EF%BC%88%E8%A7%86%E9%A2%91%E5%88%86%E9%95%9C%E5%88%86%E6%9E%90%EF%BC%89"><span class="toc-text">6.3 HTTP 节点（视频分镜分析）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-Code-%E8%8A%82%E7%82%B9%EF%BC%88%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA%EF%BC%89"><span class="toc-text">6.4 Code 节点（格式化输出）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B"><span class="toc-text">7. 输出示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dify-%E4%B8%AD%E7%9A%84%E8%BE%93%E5%87%BA"><span class="toc-text">Dify 中的输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A3%9E%E4%B9%A6%E8%A1%A8%E6%A0%BC%E6%95%88%E6%9E%9C"><span class="toc-text">飞书表格效果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%8E%92%E9%94%99"><span class="toc-text">8. 常见问题排错</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-HTTP-%E8%8A%82%E7%82%B9%E8%B6%85%E6%97%B6"><span class="toc-text">8.1 HTTP 节点超时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-LLM-%E8%BF%94%E5%9B%9E-429-%E9%99%90%E6%B5%81"><span class="toc-text">8.2 LLM 返回 429 限流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E4%B8%8A%E4%BC%A0%E5%88%B0%E9%A3%9E%E4%B9%A6"><span class="toc-text">8.3 图片无法上传到飞书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-%E2%80%9Cparams-error%E2%80%9D-%E9%94%99%E8%AF%AF"><span class="toc-text">8.4 “params error” 错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-%E2%80%9CFieldNameNotFound%E2%80%9D-%E9%94%99%E8%AF%AF"><span class="toc-text">8.5 “FieldNameNotFound” 错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-6-Dify-%E5%8F%98%E9%87%8F%E6%88%AA%E6%96%AD"><span class="toc-text">8.6 Dify 变量截断</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E7%BB%B4%E6%8A%A4%E5%91%BD%E4%BB%A4"><span class="toc-text">9. 维护命令</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2965,13 +3364,14 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2980,14 +3380,14 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
