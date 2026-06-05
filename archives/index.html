@@ -2296,7 +2296,7 @@ volantis.getFunctionHash= (func) => {
   /******************************************************************************/
   //图像加载出错时的处理
   function errorImgAvatar(img) {
-    img.src = "https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg";
+    img.src = "/images/avatar.png";
     img.onerror = null;
   }
   function errorImgCover(img) {
@@ -2376,8 +2376,8 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
   volantis.GLOBAL_CONFIG ={
     root: '/',
     debug: "env",
-    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1780670855044),
+    default: {"avatar":"/images/avatar.png","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"/images/avatar.png"},
+    lastupdate: new Date(1780672114259),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2477,7 +2477,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
                   
                     active-action="action-home"
                   >
-                  <i class='fa-solid fa-rss fa-fw'></i>博客
+                  <i class='fa-solid fa-pen-fancy fa-fw'></i>博客
                 </a>
                 
               </li>
@@ -2494,7 +2494,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
                   
                     active-action="action-categories"
                   >
-                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                  <i class='fa-solid fa-layer-group fa-fw'></i>分类
                 </a>
                 
               </li>
@@ -2528,24 +2528,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
                   
                     active-action="action-archives"
                   >
-                  <i class='fa-solid fa-archive fa-fw'></i>归档
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/friends/" title="友链"
-                  
-                  
-                  
-                    active-action="action-friends"
-                  >
-                  <i class='fa-solid fa-link fa-fw'></i>友链
+                  <i class='fa-solid fa-box-archive fa-fw'></i>归档
                 </a>
                 
               </li>
@@ -2562,7 +2545,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
                   
                     active-action="action-about"
                   >
-                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                  <i class='fa-solid fa-user fa-fw'></i>关于
                 </a>
                 
               </li>
@@ -2598,7 +2581,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
                   
                     active-action="action-home"
                   >
-                  <i class='fa-solid fa-rss fa-fw'></i>博客
+                  <i class='fa-solid fa-pen-fancy fa-fw'></i>博客
                 </a>
                 
               </li>
@@ -2615,7 +2598,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
                   
                     active-action="action-categories"
                   >
-                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                  <i class='fa-solid fa-layer-group fa-fw'></i>分类
                 </a>
                 
               </li>
@@ -2649,24 +2632,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
                   
                     active-action="action-archives"
                   >
-                  <i class='fa-solid fa-archive fa-fw'></i>归档
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/friends/" title="友链"
-                  
-                  
-                  
-                    active-action="action-friends"
-                  >
-                  <i class='fa-solid fa-link fa-fw'></i>友链
+                  <i class='fa-solid fa-box-archive fa-fw'></i>归档
                 </a>
                 
               </li>
@@ -2683,7 +2649,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
                   
                     active-action="action-about"
                   >
-                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                  <i class='fa-solid fa-user fa-fw'></i>关于
                 </a>
                 
               </li>
@@ -2709,7 +2675,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
       <!-- see: /layout/_partial/scripts/_ctrl.ejs -->
       <div id="half" class='cover-wrapper  dock' style="display: ;">
         
-  <div class='cover-bg lazyload placeholder' data-bg="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg"></div>
+  <div class='cover-bg lazyload placeholder' data-bg="/images/boke.png"></div>
 
 <div class='cover-body'>
   <div class='top'>
@@ -2730,28 +2696,28 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
               
               
               active-action="action-categories">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f4c1.svg'><p>分类</p>
+              <i class='fa-solid fa-layer-group fa-fw'></i><p>分类</p>
             </a>
           
             <a href="/tags/"
               
               
               active-action="action-tags">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f3f7.svg'><p>标签</p>
+              <i class='fa-solid fa-tags fa-fw'></i><p>标签</p>
             </a>
           
             <a href="/archives/"
               
               
               active-action="action-archives">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f4da.svg'><p>归档</p>
+              <i class='fa-solid fa-box-archive fa-fw'></i><p>归档</p>
             </a>
           
             <a href="/about/"
               
               
               active-action="action-about">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f464.svg'><p>关于</p>
+              <i class='fa-solid fa-user fa-fw'></i><p>关于</p>
             </a>
           
         
@@ -2840,7 +2806,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
     
       
         <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg' alt='avatar' />
+          <img no-lazy src='/images/avatar.png' alt='avatar' />
         </a>
       
     
@@ -2850,7 +2816,7 @@ volantis.pjax.send(volantis.clearAllTimers,"clearAllTimers");
           <h2>小杨</h2>
         
         
-          <p>2026届 · 前端&#x2F;AI开发</p>
+          <p>AI 全栈开发工程师</p>
 
         
         
